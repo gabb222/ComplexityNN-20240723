@@ -4,8 +4,9 @@
 venv
 *.pt
 __pycache__/
-research/
-research_v1/
-scene_output_grey/
+figures/
+output_scenic_grey/
+output_scenic_rgb/
+output_synthetic/
 VISCHEMA-data/
 triton/triton-2.1.0-cp311-cp311-win_amd64.whl

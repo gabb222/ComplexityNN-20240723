@@ -6,16 +6,16 @@ from pptx.util import Inches
 import seaborn as sns
 
 # Path to the research folder
-image_folder = 'research/'
+image_folder = 'synthetic/'
 
 # Path to the output folder
-map_folder = 'output/'
+map_folder = 'output_synthetic/'
 
 # Path to the metrics.csv file
-metrics_file = 'output\metrics.csv'
+metrics_file = 'output_synthetic\metrics.csv'
 
 # Path to the predictions.csv file
-predictions_file = 'output\predictions.csv'
+predictions_file = 'output_synthetic\predictions.csv'
 
 # Load metrics data from the CSV file
 metrics_data = pd.read_csv(metrics_file)
@@ -112,29 +112,29 @@ compiled_data = compiled_data.sort_values('Qualitative Difficulty')
 
 # Create scatter plots for the compiled data
 sns.scatterplot(data=compiled_data,x='Qualitative Difficulty',y='Clutter',style='Density',hue='Diameter',palette='tab10',alpha=0.6)
-plt.savefig('difficulty_clutter.png',dpi=1000)
+plt.savefig('figures\difficulty_clutter.png',dpi=1000)
 #plt.show()
 plt.close()
 
 sns.scatterplot(data=compiled_data,x='Qualitative Difficulty',y='Symmetry',style='Density',hue='Diameter',palette='tab10',alpha=0.6)
-plt.savefig('difficulty_symmetry.png',dpi=1000)
+plt.savefig('figures\difficulty_symmetry.png',dpi=1000)
 #plt.show()
 plt.close()
 
 sns.scatterplot(data=compiled_data,x='Qualitative Difficulty',y='Prediction',style='Density',hue='Diameter',palette='tab10',alpha=0.6)
-plt.savefig('difficulty_prediction.png',dpi=1000)
+plt.savefig('figures\difficulty_prediction.png',dpi=1000)
 #plt.show()
 plt.close()
 
 # Add scatter plots to the PowerPoint presentation
 slide = presentation.slides.add_slide(presentation.slide_layouts[6])
-slide.shapes.add_picture('difficulty_clutter.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
+slide.shapes.add_picture('figures\difficulty_clutter.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
 
 slide = presentation.slides.add_slide(presentation.slide_layouts[6])
-slide.shapes.add_picture('difficulty_symmetry.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
+slide.shapes.add_picture('figures\difficulty_symmetry.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
 
 slide = presentation.slides.add_slide(presentation.slide_layouts[6])
-slide.shapes.add_picture('difficulty_prediction.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
+slide.shapes.add_picture('figures\difficulty_prediction.png', Inches(0.5), Inches(0.5), width=Inches(9), height=Inches(6))
 
 # Add table to the PowerPoint presentation
 slide = presentation.slides.add_slide(presentation.slide_layouts[6])
@@ -149,4 +149,4 @@ for i, row in compiled_data.iterrows():
         table.cell(i+1, j).text = str(row[column])
 
 # Save the PowerPoint presentation
-presentation.save('output\summary.pptx')
+presentation.save('output_synthetic\summary.pptx')

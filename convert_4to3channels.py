@@ -2,10 +2,10 @@ import os
 from PIL import Image
 
 # Path to the input folder
-input_folder = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/research"
+input_folder = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/synthetic"
 
 # Path to the new folder to save the converted images
-output_folder = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/research_v1"
+output_folder = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/synthetic_v1"
 
 # Create the output folder if it doesn't exist
 os.makedirs(output_folder, exist_ok=True)
