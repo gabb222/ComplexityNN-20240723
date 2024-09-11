@@ -4,7 +4,6 @@
 venv
 *.pt
 __pycache__/
-output/
 research/
 research_v1/
 scene_output_grey/
