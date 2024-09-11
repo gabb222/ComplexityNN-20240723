@@ -1,0 +1,29 @@
+import os
+import cv2
+
+folder_path = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/VISCHEMA-data/VISC-C/scenes"
+output_path = "d:/01 Work Projects/Dissertation/ComplexityNN-20240723/VISCHEMA-data/VISC-C/scenes_grey"
+
+# Get a list of all files in the folder
+file_list = os.listdir(folder_path)
+
+# Iterate over each file in the folder
+for file_name in file_list:
+    # Check if the file is an image
+    if file_name.endswith((".jpg", ".jpeg", ".png")):
+        # Read the image
+        image_path = os.path.join(folder_path, file_name)
+        image = cv2.imread(image_path)
+
+        # Convert the image to grayscale
+        gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        # Convert the grayscale image to 3 channels
+        gray_image_3_channels = cv2.cvtColor(gray_image, cv2.COLOR_GRAY2BGR)
+
+        # Do something with the gray_image_3_channels
+        # ...
+
+        # Save the converted image to the output folder        
+        output_file_path = os.path.join(output_path, file_name)
+        cv2.imwrite(output_file_path, gray_image_3_channels)
