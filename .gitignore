@@ -1,4 +1,12 @@
 .idea/
+.vs
+.venv
 venv
 *.pt
 __pycache__/
+output/
+research/
+research_v1/
+scene_output_grey/
+VISCHEMA-data/
+triton/triton-2.1.0-cp311-cp311-win_amd64.whl
