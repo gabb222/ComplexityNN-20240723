@@ -11,3 +11,6 @@ python run.py --model model/complexity_net.pt --directory VISCHEMA-data/VISC-C/s
 
 # full scenic dataset in grayscale
 python run.py --model model/complexity_net.pt --directory VISCHEMA-data/VISC-C/scenes_grey/ --output output_scenic_grey
+
+# NOME background dataset
+python run.py --model model/complexity_net.pt --directory Backgrounds_NOME_v1/ --output output_backgrounds_NOME
