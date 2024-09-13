@@ -4,7 +4,11 @@
 venv
 *.pt
 __pycache__/
+Backgrounds_NOME/
+Backgrounds_NOME_v1/
+Backgrounds_Pauly/
 figures/
+output_backgrounds_NOME/
 output_scenic_grey/
 output_scenic_rgb/
 output_synthetic/
